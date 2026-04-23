@@ -71,6 +71,10 @@ Owns fixed-asset register and lifecycle posture so capitalization, custody, tran
 | Action | `assets.register.create` | Permission: `assets.register.write` | Create Asset Record<br>Idempotent<br>Audited |
 | Action | `assets.capitalization.request` | Permission: `assets.depreciation.write` | Request Asset Capitalization<br>Non-idempotent<br>Audited |
 | Action | `assets.transfers.issue` | Permission: `assets.transfers.write` | Issue Asset Transfer<br>Non-idempotent<br>Audited |
+| Action | `assets.register.hold` | Permission: `assets.register.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `assets.register.release` | Permission: `assets.register.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `assets.register.amend` | Permission: `assets.register.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `assets.register.reverse` | Permission: `assets.register.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `assets.register` | Portal disabled | Asset master and lifecycle records.<br>Purpose: Own fixed-asset truth separately from stock, payroll, or project execution state.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `assets.depreciation` | Portal disabled | Depreciation schedule and book posture records.<br>Purpose: Track lifecycle-driven financial posture without posting ledger truth directly.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `assets.transfers` | Portal disabled | Custody, branch transfer, and disposal-ready asset movement records.<br>Purpose: Expose transfer and custody flows as first-class operational state.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/assets-core";
+import { manifest, createAssetRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/assets-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  createAssetRecordAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/assets-core";
+import { manifest, createAssetRecordAction } from "@plugins/assets-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", createAssetRecordAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `assets.register.create`, `assets.capitalization.request`, `assets.transfers.issue`.
+- Exports 7 governed actions: `assets.register.create`, `assets.capitalization.request`, `assets.transfers.issue`, `assets.register.hold`, `assets.register.release`, `assets.register.amend`, `assets.register.reverse`.
 - Owns 3 resource contracts: `assets.register`, `assets.depreciation`, `assets.transfers`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

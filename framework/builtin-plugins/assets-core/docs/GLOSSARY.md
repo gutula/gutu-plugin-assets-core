@@ -9,6 +9,10 @@
 | assets.register.create | Create Asset Record |
 | assets.capitalization.request | Request Asset Capitalization |
 | assets.transfers.issue | Issue Asset Transfer |
+| assets.register.hold | Place Record On Hold |
+| assets.register.release | Release Record Hold |
+| assets.register.amend | Amend Record |
+| assets.register.reverse | Reverse Record |
 | assets.projections.refresh | Job definition queued on `assets-projections`. |
 | assets.reconciliation.run | Job definition queued on `assets-reconciliation`. |
 | asset-lifecycle | Register, capitalize, assign, transfer, depreciate, and close asset records. |

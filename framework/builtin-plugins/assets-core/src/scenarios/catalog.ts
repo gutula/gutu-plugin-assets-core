@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "assets.register.create",
       "assets.capitalization.request",
-      "assets.transfers.issue"
+      "assets.transfers.issue",
+      "assets.register.hold",
+      "assets.register.release",
+      "assets.register.amend",
+      "assets.register.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -25,7 +29,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "assets.register.create",
       "assets.capitalization.request",
-      "assets.transfers.issue"
+      "assets.transfers.issue",
+      "assets.register.hold",
+      "assets.register.release",
+      "assets.register.amend",
+      "assets.register.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -44,7 +52,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "assets.register.create",
       "assets.capitalization.request",
-      "assets.transfers.issue"
+      "assets.transfers.issue",
+      "assets.register.hold",
+      "assets.register.release",
+      "assets.register.amend",
+      "assets.register.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -63,7 +75,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "assets.register.create",
       "assets.capitalization.request",
-      "assets.transfers.issue"
+      "assets.transfers.issue",
+      "assets.register.hold",
+      "assets.register.release",
+      "assets.register.amend",
+      "assets.register.reverse"
     ],
     "downstreamTargets": {
       "create": [],

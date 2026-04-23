@@ -5,6 +5,10 @@
 - `assets.register.create`: Create Asset Record
 - `assets.capitalization.request`: Request Asset Capitalization
 - `assets.transfers.issue`: Issue Asset Transfer
+- `assets.register.hold`: Place Record On Hold
+- `assets.register.release`: Release Record Hold
+- `assets.register.amend`: Amend Record
+- `assets.register.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -70,6 +74,106 @@ Forbidden shortcuts:
 Issue Asset Transfer
 
 Permission: `assets.transfers.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `assets.register`, `assets.depreciation`, `assets.transfers`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `assets.register.hold`
+
+Place Record On Hold
+
+Permission: `assets.register.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `assets.register`, `assets.depreciation`, `assets.transfers`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `assets.register.release`
+
+Release Record Hold
+
+Permission: `assets.register.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `assets.register`, `assets.depreciation`, `assets.transfers`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `assets.register.amend`
+
+Amend Record
+
+Permission: `assets.register.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `assets.register`, `assets.depreciation`, `assets.transfers`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `assets.register.reverse`
+
+Reverse Record
+
+Permission: `assets.register.write`
 
 Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
 
