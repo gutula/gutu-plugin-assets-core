@@ -9,6 +9,20 @@
     "traceability-core",
     "accounting-core"
   ],
+  "recommendedPlugins": [],
+  "capabilityEnhancingPlugins": [
+    "procurement-core",
+    "projects-core",
+    "hr-payroll-core",
+    "maintenance-cmms-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-manufacturing"
+  ],
+  "standaloneSupported": true,
   "requiredCapabilities": [
     "ui.register.admin",
     "api.rest.mount",

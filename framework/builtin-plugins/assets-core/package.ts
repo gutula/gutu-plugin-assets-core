@@ -60,7 +60,49 @@ export default definePackage({
       "packageId": "accounting-core",
       "class": "required",
       "rationale": "Required for Assets Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "procurement-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Assets Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "projects-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Assets Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "hr-payroll-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Assets Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "maintenance-cmms-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Assets Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "integration-only",
+      "rationale": "Only needed when Assets Core must exchange data or actions with adjacent or external surfaces."
     }
+  ],
+  "recommendedPlugins": [],
+  "capabilityEnhancingPlugins": [
+    "procurement-core",
+    "projects-core",
+    "hr-payroll-core",
+    "maintenance-cmms-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-manufacturing"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Fixed asset truth can stand alone, but capitalization and depreciation are strongest with Accounting attached."
   ],
   "optionalWith": [],
   "conflictsWith": [],

@@ -1,6 +1,28 @@
 {
   "packageId": "assets-core",
   "packName": "assets-core-starter-pack",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "traceability-core",
+    "accounting-core"
+  ],
+  "recommendedPlugins": [],
+  "capabilityEnhancingPlugins": [
+    "procurement-core",
+    "projects-core",
+    "hr-payroll-core",
+    "maintenance-cmms-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-manufacturing"
+  ],
   "expectedActions": [
     "assets.register.create",
     "assets.capitalization.request",
