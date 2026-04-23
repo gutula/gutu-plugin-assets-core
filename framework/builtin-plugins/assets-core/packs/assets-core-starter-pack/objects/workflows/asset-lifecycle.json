@@ -1,0 +1,9 @@
+{
+  "workflowId": "asset-lifecycle",
+  "actors": [
+    "asset-manager",
+    "approver",
+    "controller"
+  ],
+  "description": "Register, capitalize, assign, transfer, depreciate, and close asset records."
+}

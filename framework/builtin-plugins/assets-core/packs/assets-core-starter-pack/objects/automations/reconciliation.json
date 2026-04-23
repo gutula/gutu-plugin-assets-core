@@ -1,0 +1,11 @@
+{
+  "automationId": "assets-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "assets.reconciliation.run",
+  "queues": [
+    "capitalization-review",
+    "depreciation-failure-review",
+    "physical-verification-mismatch",
+    "early-disposal-review"
+  ]
+}

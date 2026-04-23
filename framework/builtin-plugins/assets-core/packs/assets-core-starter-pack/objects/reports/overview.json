@@ -1,0 +1,21 @@
+{
+  "pluginId": "assets-core",
+  "reports": [
+    "Asset Register",
+    "Depreciation Schedule",
+    "Asset Movement Summary",
+    "Physical Verification Exceptions"
+  ],
+  "exceptionQueues": [
+    "capitalization-review",
+    "depreciation-failure-review",
+    "physical-verification-mismatch",
+    "early-disposal-review"
+  ],
+  "operationalScenarios": [
+    "acquire-to-capitalize",
+    "depreciation-run",
+    "transfer-and-custody",
+    "disposal-or-write-off"
+  ]
+}

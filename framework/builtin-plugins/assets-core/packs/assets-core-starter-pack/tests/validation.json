@@ -1,0 +1,26 @@
+{
+  "packageId": "assets-core",
+  "packName": "assets-core-starter-pack",
+  "expectedActions": [
+    "assets.register.create",
+    "assets.capitalization.request",
+    "assets.transfers.issue"
+  ],
+  "expectedResources": [
+    "assets.register",
+    "assets.depreciation",
+    "assets.transfers"
+  ],
+  "expectedReports": [
+    "Asset Register",
+    "Depreciation Schedule",
+    "Asset Movement Summary",
+    "Physical Verification Exceptions"
+  ],
+  "expectedExceptionQueues": [
+    "capitalization-review",
+    "depreciation-failure-review",
+    "physical-verification-mismatch",
+    "early-disposal-review"
+  ]
+}

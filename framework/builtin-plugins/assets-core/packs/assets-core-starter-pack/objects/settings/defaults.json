@@ -1,0 +1,9 @@
+{
+  "workspace": "assets",
+  "route": "/admin/business/assets",
+  "pageTitle": "Assets Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}
