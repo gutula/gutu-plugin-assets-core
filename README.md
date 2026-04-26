@@ -62,9 +62,9 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Repo | [gutu-plugin-assets-core](https://github.com/gutula/gutu-plugin-assets-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `accounting-core` |
 | Recommended Plugins | None |
-| Capability Enhancing | None |
-| Integration Only | None |
-| Suggested Packs | None |
+| Capability Enhancing | `procurement-core`, `projects-core`, `hr-payroll-core`, `maintenance-cmms-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-manufacturing` |
 | Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.assets`, `events.publish.assets` |
 | Provided Capabilities | `assets.register`, `assets.depreciation`, `assets.transfers` |
@@ -76,11 +76,11 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 - Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `accounting-core`
 - Recommended plugins: none
-- Capability-enhancing plugins: none
-- Integration-only plugins: none
-- Suggested packs: none
+- Capability-enhancing plugins: `procurement-core`, `projects-core`, `hr-payroll-core`, `maintenance-cmms-core`
+- Integration-only plugins: `business-portals-core`
+- Suggested packs: `sector-manufacturing`
 - Standalone supported: yes
-
+- Fixed asset truth can stand alone, but capitalization and depreciation are strongest with Accounting attached.
 
 ## Capability Matrix
 

@@ -55,9 +55,9 @@ Owns fixed-asset register and lifecycle posture so capitalization, custody, tran
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `accounting-core` |
 | Recommended Plugins | None |
-| Capability Enhancing | None |
-| Integration Only | None |
-| Suggested Packs | None |
+| Capability Enhancing | `procurement-core`, `projects-core`, `hr-payroll-core`, `maintenance-cmms-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-manufacturing` |
 | Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.assets`, `events.publish.assets` |
 | Provides Capabilities | `assets.register`, `assets.depreciation`, `assets.transfers` |
